@@ -5,6 +5,18 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <title>Профиль</title>
+    <script type="text/javascript">
+
+        function ValidMail() {
+            var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+            var myMail = document.getElementById('email').value;
+            var valid = re.test(myMail);
+            if (valid) output = 'Адрес электронной почты введен верно';
+            else output = 'Адрес электронной почты введен неверно!';
+            document.getElementById('message').innerHTML = output;
+            return valid;
+        }
+    </script>
 </head>
 <body>
 <header class="page-header">
@@ -29,14 +41,14 @@
     <div class="container">
         <div align="center" class="d8"><h3><span>Профиль</span></h3></div>
 <form action="formadata.php"  method="post">
-    <label for="login-field">Введите логин</label>
+    <label for="login-field">Введите логин (email)</label>
     <input type="text" name="login" id="login-field">
     <br>
     <label for="password-field">Введите пароль</label>
     <input type="password" name="password" id="password-field" value="password">
     <br>
-    <input type="submit" value="Войти"><br>
-    <input type="submit" value="Зарегистрироваться"><br>
+    <input type="submit" value="Войти" onClick="ValidMail();"><br>
+    <input type="submit" value="Зарегистрироваться" onClick="ValidMail();"><br>
     <a href="editprofile.html">Редактировать профиль</a>
 </form>
 </div>
