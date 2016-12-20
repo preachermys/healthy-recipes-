@@ -120,7 +120,7 @@ footer.page-footer {
 
 hr {
     border: none; /* Убираем границу */
-    background-color: steelblue; /* Цвет линии */
+    background-color: rgb(236,244,242); /* Цвет линии */
     height: 2px; /* Толщина линии */
 }
 
@@ -133,45 +133,38 @@ hr {
 
 #banner {
     width: 180px;
-    float: right;
 }
 
-.pencil {
+.headphones{
+    font-size:20px;
+    width: 1.625em;
+    border: 0.2em solid #333;
+    height: 1.438em;
+    border-radius: 3em 3em 0 0;
+    border-bottom: none;
+    margin-left:-0.2em;
     position: relative;
-    width: 0.35em;
-    height: 0.8em;
-    background: #2C2C2C;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    font-size: 1.4em;
 }
 
-.pencil:before {
-    content: "";
+.headphones:before{
     position: absolute;
-    top: -0.35em;
-    left: 0;
-    width: 0.35em;
-    height: 0.3em;
-    background: #2C2C2C;
-    border-radius: 0.1em;
+    content: '';
+    top: 1.1em;
+    left: 0.05em;
+    width: 0.313em;
+    height: 0.625em;
+    background: #2c2c2c;
+    border-radius: 0 0.125em 0.125em 0;
 }
-
-.pencil:after {
-    content: "";
+.headphones:after{
     position: absolute;
-    width: 0;
-    height: 0;
-    top: 0.85em;
-    left: 0;
-    border: solid 0.2em #2C2C2C;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    border-top: solid 0.45em #2C2C2C;
+    content: '';
+    top: 1.1em;
+    left: 1.26em;
+    width: 0.313em;
+    height: 0.625em;
+    background: #2c2c2c;
+    border-radius: 0.125em 0 0 0.125em;
 }
 
 #logo {
@@ -180,33 +173,52 @@ hr {
     margin-right: 10px;
 }
 
-@import 'https://fonts.googleapis.com/css?family=Merriweather';
-.d11 body {
-    margin: 0;
-}
 
-.d11 div {
+
+@import 'https://fonts.googleapis.com/css?family=Merriweather';
+.d8 body {margin: 0;}
+.d8 div {
     padding: 20px 0;
-    border-bottom: 2px solid rgba(0, 0, 0, .05);
+    border-bottom: 2px solid rgba(0,0,0,.05);
     text-align: center;
 }
-
-.d11 h3 {
-    display: table;
-    width: auto;
-    margin: 0 auto;
-    padding: 15px;
-    letter-spacing: 2px;
-    background: #cbdcea;
-    border: 2px dashed white;
-    color: white;
-    box-shadow: 0 0 0 4px #cbdcea;
-
+.d8 h3 {
     font-family: 'Merriweather', serif;
     font-size: 20px;
+    letter-spacing: 1px;
     max-width: 320px;
+    width: 100%;
     position: relative;
+    display: inline-block;
+    color: #465457;
+    /*color: #F16246;*/
+    padding-bottom: 10px;
 }
+
+
+.d8 h3:before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #EE6247;
+    z-index: 2;
+}
+.d8 h3:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    margin-left: -25%;
+    width: 50%;
+    height: 2px;
+    background: #ECF4F2;
+}
+
 
 
 
@@ -217,12 +229,30 @@ a:hover {
 }
 
 ul.bullets {
-    list-style-image: url(images/mushroom.png);
+    list-style-image: url(images/leaf.jpg);
 }
 table {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
-    border-radius: 10px;
-    border-spacing: 0;
-    text-align: center;
+    background: white;
+    max-width: 70%;
+    width: 70%;
+    border-collapse: collapse;
+    text-align: left;
+}
+th {
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+}
+
+td {
+    border-bottom: 1px solid #ccc;
+    color: #669;
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+tr:hover td{
+    color: #6699ff;
 }

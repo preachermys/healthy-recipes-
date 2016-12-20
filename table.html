@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <title>Таблица заменителей</title>
 </head>
 <body>
-<a href= "index.html">Главная</a>
-<a href= "profile.html">Профиль</a>
-<a href= "recipes.html">Рецепты</a>
-<a href= "table.html">Таблица заменителей</a>
-<a href="whereToBuy.html">Где купить</a>
-<h1 align="center" >Таблица заменителей</h1>
-<table border="1" >
+<header class="page-header">
+    <div class="container">
+        <h1 id="header">Здоровые рецепты</h1>
+
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="#">Рецепты</a>
+                <ul>
+                    <li><a href="plus.html">Вегетарианские</a></li>
+                    <li><a href="recipes_vegan.html">Веганские</a></li>
+                </ul>
+            </li>
+            <li><a href="table.html">Таблица заменителей</a></li>
+            <li><a href="profile.html">Профиль</a></li>
+            <li><a href="whereToBuy.html">Где купить</a></li>
+        </ul>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div align="center" class="d8"><h3><span>Таблица заменителей</span></h3></div>
+        <br><br>
+        <table align="center" border="1" >
     <caption>Таблица заменителей ингридиентов</caption>
     <tr>
         <th>Ингридиент</th>
@@ -44,6 +62,13 @@
         <td>1 чашка цветной капусты</td>
     </tr>
 </table>
-
+        <br><br>
+</div>
+</main>
+<footer class="page-footer">
+    <div class="container">
+        <p><a href="#header">Перейти наверх</a></p>
+    </div>
+</footer>
 </body>
 </html>
