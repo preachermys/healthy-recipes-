@@ -61,6 +61,17 @@
         }
         document.oncontextmenu=new Function("return false")
     </script>
+
+    <script language = "JavaScript">
+        /*gallery*/
+        var bigsize = "600"; //Размер большой картинки
+        var smallsize = "400"; //Размер маленькой картинки
+        function changeSizeImage(im) {
+            if(im.width == bigsize) im.width = smallsize;
+            else im.width = bigsize;
+        }
+    </script>
+
 </head>
 <body>
 <header class="page-header">
@@ -71,7 +82,7 @@
             <li><a href="index.html">Главная</a></li>
             <li><a href="#">Рецепты</a>
                 <ul>
-                    <li><a href="plus.html">Вегетарианские</a></li>
+                    <li><a href="JavaScript:alert('Раздел еще в разработке');">Вегетарианские</a></li>
                     <li><a href="recipes_vegan.html">Веганские</a></li>
                 </ul>
             </li>
@@ -91,7 +102,7 @@
         </audio>
         <br><br>
 <h2>Энергетические батончики</h2>
-<img src="images/energbat.jpeg">
+<img src="images/energbat.jpeg" width="400" onclick="changeSizeImage(this)">
 <h3>Ингридиенты</h3>
 <ul>
     <li>1,5 г стакана овсяных хлопьев (быстрого приготовления)</li>
@@ -118,7 +129,7 @@
 </ol>
 <hr>
 <h2>Банановая гранола</h2>
-<img src="images/banangranola.jpg">
+<img src="images/banangranola.jpg" width="400" onclick="changeSizeImage(this)">
 <h3>Ингридиенты</h3>
 <ul>
     <li>250 г / 700 мл овсяных хлопьев</li>

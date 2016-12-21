@@ -27,7 +27,7 @@
             <li><a href="index.html">Главная</a></li>
             <li><a href="#">Рецепты</a>
                 <ul>
-                    <li><a href="plus.html">Вегетарианские</a></li>
+                    <li><a href="JavaScript:alert('Раздел еще в разработке');">Вегетарианские</a></li>
                     <li><a href="recipes_vegan.html">Веганские</a></li>
                 </ul>
             </li>
@@ -41,11 +41,77 @@
     <div class="container">
         <div align="center" class="d8"><h3><span>Профиль</span></h3></div>
 <form action="formadata.php"  method="post">
-    <label for="login-field">Введите логин (email)</label>
-    <input type="text" name="login" id="login-field">
-    <br>
-    <label for="password-field">Введите пароль</label>
-    <input type="password" name="password" id="password-field" value="password">
+
+    <script type="text/javascript">
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function() {
+                    oldonload();
+                    func();
+                }
+            }
+        }
+
+        function prepareInputsForHints() {
+            var inputs = document.getElementsByTagName("input");
+            for (var i=0; i<inputs.length; i++){
+                // test to see if the hint span exists first
+                if (inputs[i].parentNode.getElementsByTagName("span")[0]) {
+                    // the span exists!  on focus, show the hint
+                    inputs[i].onfocus = function () {
+                        this.parentNode.getElementsByTagName("span")[0].style.display = "inline";
+                    }
+                    // when the cursor moves away from the field, hide the hint
+                    inputs[i].onblur = function () {
+                        this.parentNode.getElementsByTagName("span")[0].style.display = "none";
+                    }
+                }
+            }
+            // repeat the same tests as above for selects
+            var selects = document.getElementsByTagName("select");
+            for (var k=0; k<selects.length; k++){
+                if (selects[k].parentNode.getElementsByTagName("span")[0]) {
+                    selects[k].onfocus = function () {
+                        this.parentNode.getElementsByTagName("span")[0].style.display = "inline";
+                    }
+                    selects[k].onblur = function () {
+                        this.parentNode.getElementsByTagName("span")[0].style.display = "none";
+                    }
+                }
+            }
+        }
+        addLoadEvent(prepareInputsForHints);
+    </script>
+
+
+    <dl>
+        <dt>
+            <label for="login-field">Введите логин (email)</label>
+        </dt>
+        <dd>
+            <input
+                    name="login"
+                    id="login-field"
+                    type="text" />
+            <span>Адрес вашей электронной почты.</span>
+        </dd>
+        <dt>
+            <label for="password-field">Введите пароль</label>
+        </dt>
+        <dd>
+            <input
+                    name="password"
+                    id="password-field"
+                    value="password"
+                    type="password" />
+            <span>5-7 символов.</span>
+        </dd>
+
+    </dl>
+
     <br>
     <input type="submit" value="Войти" onClick="ValidMail();"><br>
     <input type="submit" value="Зарегистрироваться" onClick="ValidMail();"><br>
